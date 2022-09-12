@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBClimaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityType Name="tblclimas">
+    <Key>
+      <PropertyRef Name="ideclima" />
+    </Key>
+    <Property Name="ideclima" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idezona" Type="int" Nullable="false" />
+    <Property Name="fechayhora" Type="smalldatetime" Nullable="false" />
+    <Property Name="temperatura" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="presipitacion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="viento" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblzonas">
+    <Key>
+      <PropertyRef Name="idezona" />
+    </Key>
+    <Property Name="idezona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="zona" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tlbusuarios">
+    <Key>
+      <PropertyRef Name="ideusuario" />
+    </Key>
+    <Property Name="ideusuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="contraseña" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Function Name="sp_addclima" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idezona" Type="int" Mode="In" />
+    <Parameter Name="fechayhora" Type="smalldatetime" Mode="In" />
+    <Parameter Name="temperatura" Type="varchar" Mode="In" />
+    <Parameter Name="presipitacion" Type="varchar" Mode="In" />
+    <Parameter Name="viento" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_adduser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuario" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_addzonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="zonas" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_delclima" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idclima" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_deluser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idusuario" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_delzona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idzona" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_updateclima" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idclima" Type="int" Mode="In" />
+    <Parameter Name="idzona" Type="int" Mode="In" />
+    <Parameter Name="fechayhora" Type="smalldatetime" Mode="In" />
+    <Parameter Name="temperatura" Type="varchar" Mode="In" />
+    <Parameter Name="presipitacion" Type="varchar" Mode="In" />
+    <Parameter Name="viento" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_updateuser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idusuario" Type="int" Mode="In" />
+    <Parameter Name="usuario" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_updatezona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idzona" Type="int" Mode="In" />
+    <Parameter Name="zona" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_updatezonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idzona" Type="int" Mode="In" />
+    <Parameter Name="zona" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="DBClimaModelStoreContainer">
+    <EntitySet Name="tblclimas" EntityType="Self.tblclimas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblzonas" EntityType="Self.tblzonas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tlbusuarios" EntityType="Self.tlbusuarios" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

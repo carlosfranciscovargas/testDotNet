@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="DBClimaModelStoreContainer" CdmEntityContainer="DBClimaEntities1">
+    <EntitySetMapping Name="tblclimas">
+      <EntityTypeMapping TypeName="DBClimaModel.tblclima">
+        <MappingFragment StoreEntitySet="tblclimas">
+          <ScalarProperty Name="ideclima" ColumnName="ideclima" />
+          <ScalarProperty Name="idezona" ColumnName="idezona" />
+          <ScalarProperty Name="fechayhora" ColumnName="fechayhora" />
+          <ScalarProperty Name="temperatura" ColumnName="temperatura" />
+          <ScalarProperty Name="presipitacion" ColumnName="presipitacion" />
+          <ScalarProperty Name="viento" ColumnName="viento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblzonas">
+      <EntityTypeMapping TypeName="DBClimaModel.tblzona">
+        <MappingFragment StoreEntitySet="tblzonas">
+          <ScalarProperty Name="idezona" ColumnName="idezona" />
+          <ScalarProperty Name="zona" ColumnName="zona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tlbusuarios">
+      <EntityTypeMapping TypeName="DBClimaModel.tlbusuario">
+        <MappingFragment StoreEntitySet="tlbusuarios">
+          <ScalarProperty Name="ideusuario" ColumnName="ideusuario" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_addclima" FunctionName="DBClimaModel.Store.sp_addclima" />
+    <FunctionImportMapping FunctionImportName="sp_adduser" FunctionName="DBClimaModel.Store.sp_adduser" />
+    <FunctionImportMapping FunctionImportName="sp_addzonas" FunctionName="DBClimaModel.Store.sp_addzonas" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBClimaModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBClimaModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_delclima" FunctionName="DBClimaModel.Store.sp_delclima" />
+    <FunctionImportMapping FunctionImportName="sp_deluser" FunctionName="DBClimaModel.Store.sp_deluser" />
+    <FunctionImportMapping FunctionImportName="sp_delzona" FunctionName="DBClimaModel.Store.sp_delzona" />
+    <FunctionImportMapping FunctionImportName="sp_updateclima" FunctionName="DBClimaModel.Store.sp_updateclima" />
+    <FunctionImportMapping FunctionImportName="sp_updateuser" FunctionName="DBClimaModel.Store.sp_updateuser" />
+    <FunctionImportMapping FunctionImportName="sp_updatezona" FunctionName="DBClimaModel.Store.sp_updatezona" />
+    <FunctionImportMapping FunctionImportName="sp_updatezonas" FunctionName="DBClimaModel.Store.sp_updatezonas" />
+  </EntityContainerMapping>
+</Mapping>

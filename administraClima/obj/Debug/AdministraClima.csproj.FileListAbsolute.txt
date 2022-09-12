@@ -1,0 +1,6 @@
+C:\Users\leopoldo\documents\visual studio 2013\Projects\WS_controlClima\administraClima\bin\administraClima.dll.config
+C:\Users\leopoldo\documents\visual studio 2013\Projects\WS_controlClima\administraClima\bin\administraClima.dll
+C:\Users\leopoldo\documents\visual studio 2013\Projects\WS_controlClima\administraClima\bin\administraClima.pdb
+C:\Users\leopoldo\documents\visual studio 2013\Projects\WS_controlClima\administraClima\obj\Debug\administraClima.dll
+C:\Users\leopoldo\documents\visual studio 2013\Projects\WS_controlClima\administraClima\obj\Debug\administraClima.pdb
+C:\Users\leopoldo\documents\visual studio 2013\Projects\WS_controlClima\administraClima\obj\Debug\AdministraClima.csprojResolveAssemblyReference.cache

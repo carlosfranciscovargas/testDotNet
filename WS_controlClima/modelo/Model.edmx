@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DBClimaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityType Name="tblclimas">
+          <Key>
+            <PropertyRef Name="ideclima" />
+          </Key>
+          <Property Name="ideclima" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idezona" Type="int" Nullable="false" />
+          <Property Name="fechayhora" Type="smalldatetime" Nullable="false" />
+          <Property Name="temperatura" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="presipitacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="viento" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblzonas">
+          <Key>
+            <PropertyRef Name="idezona" />
+          </Key>
+          <Property Name="idezona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="zona" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tlbusuarios">
+          <Key>
+            <PropertyRef Name="ideusuario" />
+          </Key>
+          <Property Name="ideusuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contraseña" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Function Name="sp_addclima" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idezona" Type="int" Mode="In" />
+          <Parameter Name="fechayhora" Type="smalldatetime" Mode="In" />
+          <Parameter Name="temperatura" Type="varchar" Mode="In" />
+          <Parameter Name="presipitacion" Type="varchar" Mode="In" />
+          <Parameter Name="viento" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_adduser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_addzonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="zonas" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_delclima" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idclima" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_deluser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idusuario" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_delzona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idzona" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_updateclima" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idclima" Type="int" Mode="In" />
+          <Parameter Name="idzona" Type="int" Mode="In" />
+          <Parameter Name="fechayhora" Type="smalldatetime" Mode="In" />
+          <Parameter Name="temperatura" Type="varchar" Mode="In" />
+          <Parameter Name="presipitacion" Type="varchar" Mode="In" />
+          <Parameter Name="viento" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_updateuser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idusuario" Type="int" Mode="In" />
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_updatezona" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idzona" Type="int" Mode="In" />
+          <Parameter Name="zona" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_updatezonas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idzona" Type="int" Mode="In" />
+          <Parameter Name="zona" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="DBClimaModelStoreContainer">
+          <EntitySet Name="tblclimas" EntityType="Self.tblclimas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblzonas" EntityType="Self.tblzonas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tlbusuarios" EntityType="Self.tlbusuarios" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBClimaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityType Name="tblclima">
+          <Key>
+            <PropertyRef Name="ideclima" />
+          </Key>
+          <Property Name="ideclima" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idezona" Type="Int32" Nullable="false" />
+          <Property Name="fechayhora" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="temperatura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="presipitacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="viento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblzona">
+          <Key>
+            <PropertyRef Name="idezona" />
+          </Key>
+          <Property Name="idezona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="zona" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tlbusuario">
+          <Key>
+            <PropertyRef Name="ideusuario" />
+          </Key>
+          <Property Name="ideusuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DBClimaEntities1">
+          <EntitySet Name="tblclimas" EntityType="Self.tblclima" />
+          <EntitySet Name="tblzonas" EntityType="Self.tblzona" />
+          <EntitySet Name="tlbusuarios" EntityType="Self.tlbusuario" />
+          <FunctionImport Name="sp_addclima">
+            <Parameter Name="idezona" Mode="In" Type="Int32" />
+            <Parameter Name="fechayhora" Mode="In" Type="DateTime" />
+            <Parameter Name="temperatura" Mode="In" Type="String" />
+            <Parameter Name="presipitacion" Mode="In" Type="String" />
+            <Parameter Name="viento" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_adduser">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_addzonas">
+          <Parameter Name="zonas" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_delclima">
+          <Parameter Name="idclima" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_deluser">
+          <Parameter Name="idusuario" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_delzona">
+          <Parameter Name="idzona" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_updateclima">
+            <Parameter Name="idclima" Mode="In" Type="Int32" />
+            <Parameter Name="idzona" Mode="In" Type="Int32" />
+            <Parameter Name="fechayhora" Mode="In" Type="DateTime" />
+            <Parameter Name="temperatura" Mode="In" Type="String" />
+            <Parameter Name="presipitacion" Mode="In" Type="String" />
+            <Parameter Name="viento" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_updateuser">
+            <Parameter Name="idusuario" Mode="In" Type="Int32" />
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_updatezona">
+            <Parameter Name="idzona" Mode="In" Type="Int32" />
+            <Parameter Name="zona" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_updatezonas">
+            <Parameter Name="idzona" Mode="In" Type="Int32" />
+            <Parameter Name="zona" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="DBClimaModelStoreContainer" CdmEntityContainer="DBClimaEntities1">
+          <EntitySetMapping Name="tblclimas">
+            <EntityTypeMapping TypeName="DBClimaModel.tblclima">
+              <MappingFragment StoreEntitySet="tblclimas">
+                <ScalarProperty Name="ideclima" ColumnName="ideclima" />
+                <ScalarProperty Name="idezona" ColumnName="idezona" />
+                <ScalarProperty Name="fechayhora" ColumnName="fechayhora" />
+                <ScalarProperty Name="temperatura" ColumnName="temperatura" />
+                <ScalarProperty Name="presipitacion" ColumnName="presipitacion" />
+                <ScalarProperty Name="viento" ColumnName="viento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblzonas">
+            <EntityTypeMapping TypeName="DBClimaModel.tblzona">
+              <MappingFragment StoreEntitySet="tblzonas">
+                <ScalarProperty Name="idezona" ColumnName="idezona" />
+                <ScalarProperty Name="zona" ColumnName="zona" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tlbusuarios">
+            <EntityTypeMapping TypeName="DBClimaModel.tlbusuario">
+              <MappingFragment StoreEntitySet="tlbusuarios">
+                <ScalarProperty Name="ideusuario" ColumnName="ideusuario" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_addclima" FunctionName="DBClimaModel.Store.sp_addclima" />
+          <FunctionImportMapping FunctionImportName="sp_adduser" FunctionName="DBClimaModel.Store.sp_adduser" />
+          <FunctionImportMapping FunctionImportName="sp_addzonas" FunctionName="DBClimaModel.Store.sp_addzonas" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBClimaModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBClimaModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_delclima" FunctionName="DBClimaModel.Store.sp_delclima" />
+          <FunctionImportMapping FunctionImportName="sp_deluser" FunctionName="DBClimaModel.Store.sp_deluser" />
+          <FunctionImportMapping FunctionImportName="sp_delzona" FunctionName="DBClimaModel.Store.sp_delzona" />
+          <FunctionImportMapping FunctionImportName="sp_updateclima" FunctionName="DBClimaModel.Store.sp_updateclima" />
+          <FunctionImportMapping FunctionImportName="sp_updateuser" FunctionName="DBClimaModel.Store.sp_updateuser" />
+          <FunctionImportMapping FunctionImportName="sp_updatezona" FunctionName="DBClimaModel.Store.sp_updatezona" />
+          <FunctionImportMapping FunctionImportName="sp_updatezonas" FunctionName="DBClimaModel.Store.sp_updatezonas" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

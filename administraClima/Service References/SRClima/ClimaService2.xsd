@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:51371/ClimaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WS_controlClima.modelo" />
+  <xs:element name="agregarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="agregarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agregarUsuarioResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="user" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loginResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="actualizarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ideusuario" type="xs:int" />
+        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="actualizarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="actualizarUsuarioResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarUsuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ideusuario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminarUsuarioResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarUsuario">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarUsuarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WS_controlClima.modelo" minOccurs="0" name="listarUsuarioResult" nillable="true" type="q1:ArrayOftlbusuario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="agregarZona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="zona" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="agregarZonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agregarZonaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="actualizarZona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idezona" type="xs:int" />
+        <xs:element minOccurs="0" name="zona" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="actualizarZonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="actualizarZonaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarZona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idezon" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarZonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminarZonaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarZonas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarZonasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WS_controlClima.modelo" minOccurs="0" name="listarZonasResult" nillable="true" type="q2:ArrayOftblzona" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="agregarClima">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idezona" type="xs:int" />
+        <xs:element minOccurs="0" name="fechahora" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="temperatura" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="presipitacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="viento" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="agregarClimaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="agregarClimaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="actualizarClima">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ideclima" type="xs:int" />
+        <xs:element minOccurs="0" name="idezona" type="xs:int" />
+        <xs:element minOccurs="0" name="fechahora" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="temperatura" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="presipitacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="viento" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="actualizarClimaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="actualizarClimaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarClima">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ideclima" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarClimaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminarClimaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarClimas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarClimasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WS_controlClima.modelo" minOccurs="0" name="listarClimasResult" nillable="true" type="q3:ArrayOftblclima" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarClimasPorZona">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idezona" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarClimasPorZonaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WS_controlClima.modelo" minOccurs="0" name="listarClimasPorZonaResult" nillable="true" type="q4:ArrayOftblclima" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verClima">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idezona" type="xs:int" />
+        <xs:element minOccurs="0" name="fechahora" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="verClimaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WS_controlClima.modelo" minOccurs="0" name="verClimaResult" nillable="true" type="q5:ArrayOftblclima" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

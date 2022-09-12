@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ClimaService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51371/ClimaService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51371/ClimaService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51371/ClimaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WS_controlClima.modelo" />
+      <xsd:import schemaLocation="http://localhost:51371/ClimaService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://localhost:51371/ClimaService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IClimaService_agregarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:agregarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_agregarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:agregarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_login_InputMessage">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_actualizarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_actualizarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_eliminarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_eliminarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_listarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_listarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_agregarZona_InputMessage">
+    <wsdl:part name="parameters" element="tns:agregarZona" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_agregarZona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:agregarZonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_actualizarZona_InputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarZona" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_actualizarZona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarZonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_eliminarZona_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarZona" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_eliminarZona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarZonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_listarZonas_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarZonas" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_listarZonas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarZonasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_agregarClima_InputMessage">
+    <wsdl:part name="parameters" element="tns:agregarClima" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_agregarClima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:agregarClimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_actualizarClima_InputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarClima" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_actualizarClima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarClimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_eliminarClima_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarClima" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_eliminarClima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarClimaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_listarClimas_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarClimas" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_listarClimas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarClimasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_listarClimasPorZona_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarClimasPorZona" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_listarClimasPorZona_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarClimasPorZonaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_verClima_InputMessage">
+    <wsdl:part name="parameters" element="tns:verClima" />
+  </wsdl:message>
+  <wsdl:message name="IClimaService_verClima_OutputMessage">
+    <wsdl:part name="parameters" element="tns:verClimaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IClimaService">
+    <wsdl:operation name="agregarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/agregarUsuario" message="tns:IClimaService_agregarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/agregarUsuarioResponse" message="tns:IClimaService_agregarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/login" message="tns:IClimaService_login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/loginResponse" message="tns:IClimaService_login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/actualizarUsuario" message="tns:IClimaService_actualizarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/actualizarUsuarioResponse" message="tns:IClimaService_actualizarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/eliminarUsuario" message="tns:IClimaService_eliminarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/eliminarUsuarioResponse" message="tns:IClimaService_eliminarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/listarUsuario" message="tns:IClimaService_listarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/listarUsuarioResponse" message="tns:IClimaService_listarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="agregarZona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/agregarZona" message="tns:IClimaService_agregarZona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/agregarZonaResponse" message="tns:IClimaService_agregarZona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarZona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/actualizarZona" message="tns:IClimaService_actualizarZona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/actualizarZonaResponse" message="tns:IClimaService_actualizarZona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarZona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/eliminarZona" message="tns:IClimaService_eliminarZona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/eliminarZonaResponse" message="tns:IClimaService_eliminarZona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarZonas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/listarZonas" message="tns:IClimaService_listarZonas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/listarZonasResponse" message="tns:IClimaService_listarZonas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="agregarClima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/agregarClima" message="tns:IClimaService_agregarClima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/agregarClimaResponse" message="tns:IClimaService_agregarClima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarClima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/actualizarClima" message="tns:IClimaService_actualizarClima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/actualizarClimaResponse" message="tns:IClimaService_actualizarClima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarClima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/eliminarClima" message="tns:IClimaService_eliminarClima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/eliminarClimaResponse" message="tns:IClimaService_eliminarClima_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarClimas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/listarClimas" message="tns:IClimaService_listarClimas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/listarClimasResponse" message="tns:IClimaService_listarClimas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarClimasPorZona">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/listarClimasPorZona" message="tns:IClimaService_listarClimasPorZona_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/listarClimasPorZonaResponse" message="tns:IClimaService_listarClimasPorZona_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="verClima">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClimaService/verClima" message="tns:IClimaService_verClima_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClimaService/verClimaResponse" message="tns:IClimaService_verClima_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IClimaService" type="tns:IClimaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="agregarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/agregarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/actualizarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/eliminarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/listarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregarZona">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/agregarZona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarZona">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/actualizarZona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarZona">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/eliminarZona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarZonas">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/listarZonas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregarClima">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/agregarClima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarClima">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/actualizarClima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarClima">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/eliminarClima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarClimas">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/listarClimas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarClimasPorZona">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/listarClimasPorZona" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verClima">
+      <soap:operation soapAction="http://tempuri.org/IClimaService/verClima" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClimaService">
+    <wsdl:port name="BasicHttpBinding_IClimaService" binding="tns:BasicHttpBinding_IClimaService">
+      <soap:address location="http://localhost:51371/ClimaService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
